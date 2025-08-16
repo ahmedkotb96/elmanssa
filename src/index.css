@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal base reset so Tailwind styles take precedence */
+:root {
+  --font-sans: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Page background: matches Tailwind 'bg-gradient-to-br from-blue-50 via-white to-purple-50' */
+  background-image: linear-gradient(135deg, #eff6ff 0%, #ffffff 50%, #f3e8ff 100%);
+  background-attachment: fixed;
+  color: #111827;
+}
+
+a {
+  font-weight: 500;
+  color: #6366f1; /* indigo-500 */
+  text-decoration: inherit;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: light) {
+  /* don't set a solid background color that hides the gradient — only adjust text color */
+  body {
+    color: #213547;
+  }
+}
+
+/* Ensure the gradient covers fully */
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Custom animations and utility helpers for landing page enhancements */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px) scale(.99); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+@keyframes pulse-strong {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+@layer utilities {
+  .animate-fade-up { animation: fade-up 600ms cubic-bezier(.2,.8,.2,1) both; }
+  .animate-float { animation: float 6s ease-in-out infinite both; }
+  .animate-pulse-strong { animation: pulse-strong 1500ms ease-in-out infinite; }
+
+  /* lightweight glass effect utilities */
+  .glass { background: rgba(255,255,255,0.55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .glass-dark { background: rgba(17,24,39,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+
+  /* subtle brand glow */
+  .glow { box-shadow: 0 10px 30px rgba(99,102,241,0.14), 0 4px 10px rgba(99,102,241,0.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-float,
+  .animate-pulse-strong { animation: none !important; }
+}
+
+/* Your previous custom rules moved to App.css if you want to keep them */
