@@ -7,10 +7,7 @@ import {
   Star,
   ChevronRight,
   Play,
-  CheckCircle,
-  Globe,
   Smartphone,
-  Headphones,
   User,
   Mail,
   Lock,
@@ -193,8 +190,7 @@ export default function LandingPage() {
               <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors font-medium inline-block px-2">Features</a>
               <a href="#courses" className="text-gray-700 hover:text-blue-600 transition-colors font-medium inline-block px-2">Courses</a>
               <a href="#instructors" className="text-gray-700 hover:text-blue-600 transition-colors font-medium inline-block px-2">Instructors</a>
-              <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors font-medium inline-block px-2">Pricing</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium inline-block px-2">Contact</a>
+              {/* pricing/contact removed */}
             </div>
             
             {/* Desktop Auth Buttons */}
@@ -229,8 +225,7 @@ export default function LandingPage() {
               <a href="#features" onClick={() => setIsMenuOpen(false)} className="text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Features</a>
               <a href="#courses" onClick={() => setIsMenuOpen(false)} className="text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Courses</a>
               <a href="#instructors" onClick={() => setIsMenuOpen(false)} className="text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Instructors</a>
-              <a href="#pricing" onClick={() => setIsMenuOpen(false)} className="text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Pricing</a>
-              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Contact</a>
+              {/* pricing/contact removed from mobile menu */}
               <div className="border-t border-gray-200 w-3/4 my-4"></div>
               <button
                 onClick={() => { setShowSignIn(true); setIsMenuOpen(false); }}
@@ -351,7 +346,7 @@ export default function LandingPage() {
 
             <div className="group p-8 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl hover:shadow-xl transition-all hover:scale-[1.02] duration-200">
               <div className="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Globe className="w-6 h-6 text-white" />
+                <Award className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-4">Global Community</h3>
               <p className="text-gray-600 leading-relaxed">Connect with learners worldwide, participate in discussions, and build your network.</p>
@@ -359,7 +354,7 @@ export default function LandingPage() {
 
             <div className="group p-8 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl hover:shadow-xl transition-all hover:scale-[1.02] duration-200">
               <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Headphones className="w-6 h-6 text-white" />
+                <Clock className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-4">24/7 Support</h3>
               <p className="text-gray-600 leading-relaxed">Get help whenever you need it with our dedicated support team and extensive knowledge base.</p>
@@ -523,131 +518,9 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-              Choose Your Plan
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Flexible pricing options to fit your learning goals and budget.
-            </p>
-          </div>
+  {/* Pricing section removed */}
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            {[
-              {
-                name: "Basic",
-                price: "$29",
-                period: "/month",
-                features: ["Access to 100+ courses", "Mobile & web access", "Basic support", "Course completion certificates"],
-                highlight: false
-              },
-              {
-                name: "Premium",
-                price: "$59",
-                period: "/month",
-                features: ["Access to ALL courses", "Offline downloads", "Priority support", "Advanced certificates", "1-on-1 mentoring", "Career services"],
-                highlight: true
-              },
-              {
-                name: "Enterprise",
-                price: "$199",
-                period: "/month",
-                features: ["Everything in Premium", "Team management", "Custom learning paths", "Analytics dashboard", "API access", "Dedicated success manager"],
-                highlight: false
-              }
-            ].map((plan, index) => (
-              <div
-                key={index}
-                className={`${plan.highlight ? 'bg-gradient-to-br from-blue-600 to-purple-600 text-white transform md:scale-[1.08] glow' : 'bg-white text-gray-800'} rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-transform duration-300 hover:scale-[1.02]'`}
-              >
-                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                 <div className="mb-6">
-                   <span className="text-4xl font-bold">{plan.price}</span>
-                   <span className={`text-lg ${plan.highlight ? 'text-blue-100' : 'text-gray-600'}`}>{plan.period}</span>
-                 </div>
-                 <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center">
-                      <CheckCircle className={`w-5 h-5 ${plan.highlight ? 'text-blue-200' : 'text-green-500'} mr-3`} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button className={`w-full py-3 rounded-lg font-semibold transition-transform duration-200 hover:scale-[1.02] ${plan.highlight ? 'bg-white text-blue-600 hover:bg-blue-50' : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700'}`}>
-                  Get Started
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-              Get in Touch
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600">
-              Have questions? We're here to help you on your learning journey.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <Mail className="w-6 h-6 text-blue-600 mr-4 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Email</h4>
-                    <p className="text-gray-600">support@eduplatform.com</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Globe className="w-6 h-6 text-blue-600 mr-4 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Website</h4>
-                    <p className="text-gray-600">www.eduplatform.com</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Headphones className="w-6 h-6 text-blue-600 mr-4 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Support Hours</h4>
-                    <p className="text-gray-600">24/7 Customer Support</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
-              <form action="#" method="POST" className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                  <input type="text" name="name" id="name" className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="Enter your name" required />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                  <input type="email" name="email" id="email" className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="Enter your email" required />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                  <textarea name="message" id="message" rows={4} className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="Enter your message" required></textarea>
-                </div>
-                <button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-[1.02] transition-all duration-200">
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+  {/* Contact section removed */}
 
       {/* Footer */}
       <footer className="py-10 bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 text-white">
@@ -664,8 +537,6 @@ export default function LandingPage() {
               <a href="#features" className="hover:text-blue-400 transition-colors">Features</a>
               <a href="#courses" className="hover:text-blue-400 transition-colors">Courses</a>
               <a href="#instructors" className="hover:text-blue-400 transition-colors">Instructors</a>
-              <a href="#pricing" className="hover:text-blue-400 transition-colors">Pricing</a>
-              <a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a>
             </div>
           </div>
 
