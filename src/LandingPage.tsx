@@ -65,13 +65,13 @@ export default function LandingPage() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input 
-                  name="name" 
-                  value={formData.name} 
-                  onChange={handleInputChange} 
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
-                  placeholder="Enter your full name" 
-                  required 
+                <input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                  placeholder="Enter your full name"
+                  required
                 />
               </div>
             </div>
@@ -81,14 +81,14 @@ export default function LandingPage() {
             <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input 
-                name="email" 
-                type="email" 
-                value={formData.email} 
-                onChange={handleInputChange} 
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
-                placeholder="Enter your email" 
-                required 
+              <input
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                placeholder="Enter your email"
+                required
               />
             </div>
           </div>
@@ -97,18 +97,18 @@ export default function LandingPage() {
             <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
             <div className="relative">
               <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input 
-                name="password" 
-                type={showPassword ? 'text' : 'password'} 
-                value={formData.password} 
-                onChange={handleInputChange} 
-                className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
-                placeholder="Enter your password" 
-                required 
+              <input
+                name="password"
+                type={showPassword ? 'text' : 'password'}
+                value={formData.password}
+                onChange={handleInputChange}
+                className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                placeholder="Enter your password"
+                required
               />
-              <button 
-                type="button" 
-                onClick={() => setShowPassword(!showPassword)} 
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
               >
                 {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
@@ -121,21 +121,21 @@ export default function LandingPage() {
               <label className="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input 
-                  name="confirmPassword" 
-                  type={showPassword ? 'text' : 'password'} 
-                  value={formData.confirmPassword} 
-                  onChange={handleInputChange} 
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" 
-                  placeholder="Confirm your password" 
-                  required 
+                <input
+                  name="confirmPassword"
+                  type={showPassword ? 'text' : 'password'}
+                  value={formData.confirmPassword}
+                  onChange={handleInputChange}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                  placeholder="Confirm your password"
+                  required
                 />
               </div>
             </div>
           )}
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
           >
             {isSignUp ? 'Create Account' : 'Sign In'}
@@ -145,16 +145,16 @@ export default function LandingPage() {
         <div className="mt-6 text-center">
           <p className="text-gray-600">
             {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
-            <button 
-              onClick={() => { 
-                if (isSignUp) { 
-                  setShowSignUp(false); 
-                  setShowSignIn(true); 
-                } else { 
-                  setShowSignIn(false); 
-                  setShowSignUp(true); 
-                } 
-              }} 
+            <button
+              onClick={() => {
+                if (isSignUp) {
+                  setShowSignUp(false);
+                  setShowSignIn(true);
+                } else {
+                  setShowSignIn(false);
+                  setShowSignUp(true);
+                }
+              }}
               className="text-blue-600 font-semibold ml-1 hover:text-blue-700 transition-colors"
             >
               {isSignUp ? 'Sign In' : 'Sign Up'}
@@ -162,8 +162,8 @@ export default function LandingPage() {
           </p>
         </div>
 
-        <button 
-          onClick={onClose} 
+        <button
+          onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-all"
         >
           <span className="text-xl leading-none">×</span>
@@ -173,9 +173,9 @@ export default function LandingPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
-      <nav className="glass sticky top-0 z-40 border-b border-gray-200">
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-lg border-b border-gray-200/80 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
@@ -190,7 +190,6 @@ export default function LandingPage() {
               <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors font-medium inline-block px-2">Features</a>
               <a href="#courses" className="text-gray-700 hover:text-blue-600 transition-colors font-medium inline-block px-2">Courses</a>
               <a href="#instructors" className="text-gray-700 hover:text-blue-600 transition-colors font-medium inline-block px-2">Instructors</a>
-              {/* pricing/contact removed */}
             </div>
             
             {/* Desktop Auth Buttons */}
@@ -203,7 +202,7 @@ export default function LandingPage() {
               </button>
               <button
                 onClick={() => setShowSignUp(true)}
-                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-[1.02] transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-[1.03] hover:shadow-lg transition-all duration-200"
               >
                 Sign Up
               </button>
@@ -225,7 +224,6 @@ export default function LandingPage() {
               <a href="#features" onClick={() => setIsMenuOpen(false)} className="text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Features</a>
               <a href="#courses" onClick={() => setIsMenuOpen(false)} className="text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Courses</a>
               <a href="#instructors" onClick={() => setIsMenuOpen(false)} className="text-lg text-gray-700 hover:text-blue-600 transition-colors font-medium">Instructors</a>
-              {/* pricing/contact removed from mobile menu */}
               <div className="border-t border-gray-200 w-3/4 my-4"></div>
               <button
                 onClick={() => { setShowSignIn(true); setIsMenuOpen(false); }}
@@ -252,55 +250,56 @@ export default function LandingPage() {
       )}
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          {/* Responsive Typography for Hero Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+      <section 
+        className="relative pt-32 pb-20 px-4 bg-cover bg-center"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
+      >
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div className="relative max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8 text-white leading-tight">
             Transform Your Future with Learning
           </h1>
-          <p className="text-lg md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed">
             Join millions of students worldwide in our comprehensive learning ecosystem. Master new skills, advance your career, and unlock your potential with expert-led courses and cutting-edge technology.
           </p>
           
-          {/* Responsive Hero Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <button
               onClick={() => setShowSignUp(true)}
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-[1.03] transition-all duration-200 shadow-2xl flex items-center animate-fade-up w-full sm:w-auto justify-center"
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-[1.03] transition-all duration-200 shadow-2xl hover:shadow-blue-500/50 flex items-center w-full sm:w-auto justify-center"
               aria-label="Start Learning Today"
             >
               Start Learning Today <ChevronRight className="ml-2 w-5 h-5" />
               <span className="ml-3 w-2 h-2 rounded-full bg-white/30 animate-pulse-strong" />
             </button>
-            <button className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-xl font-bold text-lg hover:border-blue-500 hover:text-blue-600 transition-all flex items-center w-full sm:w-auto justify-center">
+            <button className="px-8 py-4 bg-white/20 backdrop-blur-md border-2 border-white/50 text-white rounded-xl font-bold text-lg hover:bg-white/30 transition-all flex items-center w-full sm:w-auto justify-center">
               <Play className="mr-2 w-5 h-5" /> Watch Demo
             </button>
           </div>
 
-          {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">2M+</div>
-              <div className="text-gray-600">Students</div>
+              <div className="text-3xl font-bold text-white mb-2">2M+</div>
+              <div className="text-gray-300">Students</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">10K+</div>
-              <div className="text-gray-600">Courses</div>
+              <div className="text-3xl font-bold text-white mb-2">10K+</div>
+              <div className="text-gray-300">Courses</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-pink-600 mb-2">500+</div>
-              <div className="text-gray-600">Instructors</div>
+              <div className="text-3xl font-bold text-white mb-2">500+</div>
+              <div className="text-gray-300">Instructors</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-indigo-600 mb-2">95%</div>
-              <div className="text-gray-600">Success Rate</div>
+              <div className="text-3xl font-bold text-white mb-2">95%</div>
+              <div className="text-gray-300">Success Rate</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-white">
+      <section id="features" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
@@ -364,7 +363,7 @@ export default function LandingPage() {
       </section>
 
       {/* Popular Courses */}
-      <section id="courses" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section id="courses" className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
@@ -484,7 +483,7 @@ export default function LandingPage() {
       </section>
 
       {/* Instructors Section */}
-      <section id="instructors" className="py-20 bg-white">
+      <section id="instructors" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
@@ -518,10 +517,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-  {/* Pricing section removed */}
-
-  {/* Contact section removed */}
-
       {/* Footer */}
       <footer className="py-10 bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 text-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -532,7 +527,6 @@ export default function LandingPage() {
               </span>
             </div>
             
-            {/* Responsive Footer Links */}
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-white text-sm">
               <a href="#features" className="hover:text-blue-400 transition-colors">Features</a>
               <a href="#courses" className="hover:text-blue-400 transition-colors">Courses</a>
